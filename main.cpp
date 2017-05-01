@@ -8,28 +8,34 @@ void graphicsMain(Graphics& g)
     Image img("comp.png");
     Sound pew("ShortLaser.wav");
 
+    g.setBackground(GREY);
+
+    int skullX = 0;
+    int skullY = 0;
+
     while (g.draw())
     {
         g.clear();
 
+        g.image(skullX, skullY, img);
+
         for (const Event& e : g.events()) {
+
+            g.out << e << endl;
+
             switch (e.evtType) {
             case EvtType::KeyPress:
-                g.out << "KeyPress: " << e.arg << endl;
+                g.play(pew);
                 break;
             case EvtType::KeyRelease:
-                g.out << "KeyRelease: " << e.arg << endl;
                 break;
             case EvtType::MouseMove:
-                g.image(e.x, e.y, img);
+                skullX = e.x;
+                skullY = e.y;
                 break;
             case EvtType::MousePress:
-                g.out << "MousePress: " << e.arg << endl;
-                g.play(pew);
                 break;
             case EvtType::MouseRelease:
-                g.out << "MouseRelease: " << e.arg << endl;
-                g.play(pew);
                 break;
             default:
                 break;
@@ -40,5 +46,5 @@ void graphicsMain(Graphics& g)
 
 int main()
 {
-    Graphics g("Game", 1200, 800, graphicsMain);
+    Graphics g("Game", 1000, 600, graphicsMain);
 }

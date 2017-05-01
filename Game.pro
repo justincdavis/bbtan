@@ -23,3 +23,18 @@ DISTFILES += \
     data/ShortLaser.wav \
     data/comp.png
 
+ASSETS_DIR = data
+
+CONFIG(debug, debug|release) {
+    DATADIR = debug/$$ASSETS_DIR
+} else {
+    DATADIR = release/$$ASSETS_DIR
+}
+
+copydata.commands = $(COPY_DIR) \"$$shell_path($$absolute_path("$$ASSETS_DIR", $$_PRO_FILE_PWD_))\" \"$$shell_path($$absolute_path($$DATADIR, $$OUT_PWD))\"
+first.depends = $(first) copydata
+
+export(first.depends)
+export(copydata.commands)
+
+QMAKE_EXTRA_TARGETS += first copydata
