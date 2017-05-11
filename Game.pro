@@ -10,7 +10,12 @@ SOURCES += \
     graphics.cpp \
     vec3d.cpp \
     plugin.cpp \ 
+<<<<<<< HEAD \
     balls.cpp
+    balls.cpp
+=======
+    world.cpp
+>>>>>>> 905ceee1805acbd2ab9d49b3bb2e0658c53a09ac
 
 HEADERS  += \
     graphics.h \
@@ -19,7 +24,12 @@ HEADERS  += \
     window.h \
     vec3d.h \
     plugin.h \ 
+<<<<<<< HEAD \
     balls.h
+    balls.h
+=======
+    world.h
+>>>>>>> 905ceee1805acbd2ab9d49b3bb2e0658c53a09ac
 
 DISTFILES += \
     data/ShortLaser.wav \
