@@ -46,5 +46,5 @@ void graphicsMain(Graphics& g)
 
 int main()
 {
-    Graphics g("Game", 1000, 600, graphicsMain);
+    Graphics g("Game", 1000, 700, graphicsMain);
 }
