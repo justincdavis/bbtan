@@ -11,7 +11,9 @@ SOURCES += \
     vec3d.cpp \
     plugin.cpp \
     balls.cpp \
-    world.cpp
+    world.cpp \
+    grid.cpp \
+    robot.cpp
 
 HEADERS  += \
     graphics.h \
@@ -21,7 +23,9 @@ HEADERS  += \
     vec3d.h \
     plugin.h \
     balls.h \
-    world.h
+    world.h \
+    grid.h \
+    robot.h
 
 DISTFILES += \
     data/ShortLaser.wav \
