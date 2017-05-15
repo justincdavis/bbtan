@@ -25,7 +25,8 @@ HEADERS  += \
     balls.h \
     world.h \
     grid.h \
-    robot.h
+    robot.h \
+    celltype.h
 
 DISTFILES += \
     data/ShortLaser.wav \
