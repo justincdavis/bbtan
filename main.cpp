@@ -1,4 +1,5 @@
 #include "graphics.h"
+#include    "iostream"
 
 using namespace std;
 using namespace mssm;
@@ -26,6 +27,8 @@ void graphicsMain(Graphics& g)
             switch (e.evtType) {
             case EvtType::KeyPress:
                 g.play(pew);
+                cout << "YOur mOm";
+
                 break;
             case EvtType::KeyRelease:
                 break;
@@ -47,4 +50,5 @@ void graphicsMain(Graphics& g)
 int main()
 {
     Graphics g("Game", 1000, 700, graphicsMain);
+
 }
