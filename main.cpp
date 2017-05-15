@@ -13,6 +13,7 @@ void graphicsMain(Graphics& g)
 
     int skullX = 0;
     int skullY = 0;
+    int skullZ = 0;
 
     while (g.draw())
     {

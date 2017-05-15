@@ -9,7 +9,7 @@ SOURCES += \
     vec2d.cpp \
     graphics.cpp \
     vec3d.cpp \
-    plugin.cpp \ 
+    plugin.cpp \
     balls.cpp \
     world.cpp
 
