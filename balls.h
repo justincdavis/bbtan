@@ -1,11 +1,22 @@
-#ifndef BALLS_H
-#define BALLS_H
+#ifndef BALL_H
+#define BALL_H
+#include "graphics.h"
 
-
-class balls
+class Ball
 {
 public:
-    balls();
+    int x;
+    int y;
+    int width;
+    int height;
+    int xv;
+    int yv;
+    mssm::Color c;
+
+public:
+    Ball(mssm::Graphics& g);
+    void draw(mssm::Graphics& g);
+    void update(mssm::Graphics& g);
 };
 
-#endif // BALLS_H
+#endif // BALL_H
