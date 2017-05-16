@@ -4,8 +4,8 @@ using namespace mssm;
 
 Ball::Ball(Graphics& g)
 {
-    x = 100;
-    y = g.randomDouble(0,g.height());
+    x = (g.width())/2;
+    y = (g.height()) - 70;
     height = 50;
     width = 50;
     c= WHITE;
@@ -18,7 +18,7 @@ void Ball::draw(Graphics& g)
     g.ellipse(x,y,width,height,c,c);
 }
 
-void Ball::update(Graphics& g)
+void Ball::update(Graphics& g, int rx, int ry)
 {
     x = x+xv;
     y = y+yv;
@@ -26,11 +26,34 @@ void Ball::update(Graphics& g)
 
     if (y>g.height())
     {
-        yv=(yv)*-1;
+        yv=(yv)*-0;
+        xv=(xv)*-0;
+        if(x!=rx)
+        {
+            if (x>rx)
+            {
+                x=x-1;
+            }
+            if (x<rx)
+            {
+                x=x+1;
+            }
+        }
     }
+
     if (y<0)
     {
         yv=(yv)*-1;
+    }
+
+    if (x<0)
+    {
+        xv=(xv)*-1;
+    }
+
+    if (x>g.width())
+    {
+        xv=(xv)*-1;
     }
 }
 
