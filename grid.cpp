@@ -90,3 +90,38 @@ bool Grid::validRowAndCol(int row, int col){
 
     return true;
 }
+
+vector<Celltype> Grid::generateRow(Graphics& g, vector<Ball> balls, vector<vector<Celltype>> cells){
+
+    vector<Celltype> newRow;
+
+    for(int i = 0; i < cells[0].size(); i++){
+
+        int randInt = g.randomInt(0,20);
+
+        if(randInt <= 9){
+            newRow.push_back(Celltype::square);
+        }
+        else if(randInt >= 10 && randInt <= 13){
+            newRow.push_back(Celltype::triangle);
+        }
+        else if(randInt >= 14 && randInt <= 16){
+            newRow.push_back(Celltype::empty);
+        }
+        else if(randInt == 17 || randInt == 20){
+            newRow.push_back(Celltype::horizonLaser);
+        }
+        else if(randInt == 18){
+            newRow.push_back(Celltype::vertLaser);
+        }
+        else if(randInt == 19){
+            newRow.push_back(Celltype::rebound);
+        }
+    }
+
+    int addBallCell = g.randomInt(0,cells[0].size()-1);
+
+    newRow[addBallCell] = Celltype::addBall;
+
+    return newRow;
+}

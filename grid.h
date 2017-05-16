@@ -4,6 +4,8 @@
 #include "graphics.h"
 #include "vec2d.h"
 #include <vector>
+#include "balls.h"
+#include "celltype.h"
 
 using namespace mssm;
 using namespace std;
@@ -28,6 +30,7 @@ public:
     int getRow(Graphics& g, int mouseY);
     int getCol(Graphics& g, int mouseX);
     bool validRowAndCol(int row, int col);
+    vector<Celltype> generateRow(Graphics& g, vector<Ball> balls, vector<vector<Celltype>> cells);
 };
 
 #endif // GRID_H

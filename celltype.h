@@ -4,6 +4,10 @@
 enum Celltype {
     square,
     triangle,
+    addBall,
+    horizonLaser,
+    vertLaser,
+    rebound,
     empty
 };
 
