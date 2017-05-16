@@ -1,5 +1,6 @@
 #include "graphics.h"
-#include    "iostream"
+#include "iostream"
+#include "world.h"
 
 using namespace std;
 using namespace mssm;
@@ -11,16 +12,18 @@ void graphicsMain(Graphics& g)
 
     g.setBackground(GREY);
 
+    int keyPress = 0;
     int skullX = 0;
     int skullY = 0;
     int skullZ = 0;
 
+    World world(g);
+
     while (g.draw())
     {
-        g.clear();
-
+        g.clear();        
         g.image(skullX, skullY, img);
-
+        world.draw(g, keyPress);
         for (const Event& e : g.events()) {
 
             g.out << e << endl;

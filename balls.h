@@ -16,7 +16,7 @@ public:
 public:
     Ball(mssm::Graphics& g);
     void draw(mssm::Graphics& g);
-    void update(mssm::Graphics& g);
+    void update(mssm::Graphics& g, int rx, int ry);
 };
 
 #endif // BALL_H

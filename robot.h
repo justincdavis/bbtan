@@ -5,6 +5,8 @@
 class Robot
 {
 public:
+    int x;
+    int y;
     Robot();
 };
 

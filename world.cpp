@@ -1,6 +1,11 @@
 #include "world.h"
 #include <iostream>
+#include "balls.h"
+#include "robot.h"
+#include "celltype.h"
+#include "grid.h"
 
+using namespace std;
 using namespace mssm;
 
 World::World(Graphics& g)
@@ -25,6 +30,11 @@ void World::draw(Graphics& g, int keyPress){
 
     grid.draw(g);
 
+    for (int b = 0; b<balls.size(); ++b)
+    {
+        balls[b].draw(g);
+    }
+    /*
     for (int r = 0; r < grid.rows; ++r) {
         for (int c = 0; c < grid.cols; ++c) {
             if (cells[r][c] == Celltype::square) {
@@ -38,6 +48,7 @@ void World::draw(Graphics& g, int keyPress){
             }
         }
     }
+    */
 }
 
 void World::reset(Graphics &g){
