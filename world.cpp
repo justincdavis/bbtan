@@ -34,7 +34,7 @@ void World::draw(Graphics& g, int keyPress){
     {
         balls[b].draw(g);
     }
-    /*
+
     for (int r = 0; r < grid.rows; ++r) {
         for (int c = 0; c < grid.cols; ++c) {
             if (cells[r][c] == Celltype::square) {
@@ -44,11 +44,16 @@ void World::draw(Graphics& g, int keyPress){
                 grid.fillCell(g, r, c, BLUE, 1);
             }
             else if (cells[r][c] == Celltype::empty) {
-                grid.fillCell(g, r, c, GREEN, 1);
+                grid.fillCell(g, r, c, TRANSPARENT, 1);
             }
         }
     }
-    */
+
+    if(keyPress == 18){
+        cells[1] = cells[0];
+        cells[0] = grid.generateRow(g, balls, cells);
+    }
+
 }
 
 void World::reset(Graphics &g){
