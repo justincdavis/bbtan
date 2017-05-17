@@ -24,6 +24,7 @@ void graphicsMain(Graphics& g)
         g.clear();        
         g.image(skullX, skullY, img);
         world.draw(g, keyPress);
+        world.update(g, keyPress);
         for (const Event& e : g.events()) {
 
             g.out << e << endl;
@@ -53,6 +54,6 @@ void graphicsMain(Graphics& g)
 
 int main()
 {
-    Graphics g("Game", 1000, 700, graphicsMain);
+    Graphics g("Game", 500, 800, graphicsMain);
 
 }

@@ -28,7 +28,7 @@ void Grid::draw(Graphics& g)
     int rightEdge = cellLeftPos(g, cols);
     int topEdge = cellTopPos(g, 0);
     int bottomEdge = cellTopPos(g, rows);
-    g.polygon({{leftEdge, topEdge}, {rightEdge, topEdge}, {rightEdge, bottomEdge}, {leftEdge, bottomEdge}}, BLACK, GREEN);
+    //g.polygon({{leftEdge, topEdge}, {rightEdge, topEdge}, {rightEdge, bottomEdge}, {leftEdge, bottomEdge}}, BLACK, GREEN);
 }
 
 void Grid::fillCell(Graphics& g, int row, int col, Color c, double fillAmount)

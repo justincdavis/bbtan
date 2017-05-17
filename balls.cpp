@@ -9,8 +9,8 @@ Ball::Ball(Graphics& g)
     height = 50;
     width = 50;
     c= WHITE;
-    xv = g.randomDouble(10,15);
-    yv = g.randomDouble(10,15);
+    xv = 0;
+    yv = -10;
 }
 
 void Ball::draw(Graphics& g)
@@ -24,7 +24,7 @@ void Ball::update(Graphics& g, int rx, int ry)
     y = y+yv;
 
 
-    if (y>g.height())
+    if (y>g.height()-50)
     {
         yv=(yv)*-0;
         xv=(xv)*-0;
@@ -32,11 +32,11 @@ void Ball::update(Graphics& g, int rx, int ry)
         {
             if (x>rx)
             {
-                x=x-1;
+                x=x-50;
             }
             if (x<rx)
             {
-                x=x+1;
+                x=x+50;
             }
         }
     }
