@@ -24,6 +24,7 @@ public:
     void reset(Graphics& g);
     bool hasWon();
     void winningAnime(Graphics& g);
+    void update(Graphics& g, int keyPress);
 };
 
 #endif // WORLD_H

@@ -26,6 +26,14 @@ World::World(Graphics& g)
     balls = vector<Ball>{3,Ball(g)};
 }
 
+void World::update(Graphics&g, int keyPress){
+
+    for (int b = 0; b<balls.size(); ++b)
+    {
+        balls[b].update(g, bbtan.x, bbtan.y);
+    }
+}
+
 void World::draw(Graphics& g, int keyPress){
 
     grid.draw(g);
