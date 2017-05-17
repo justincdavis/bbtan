@@ -123,5 +123,7 @@ vector<Celltype> Grid::generateRow(Graphics& g, vector<Ball> balls, vector<vecto
 
     newRow[addBallCell] = Celltype::addBall;
 
+
+
     return newRow;
 }
