@@ -18,6 +18,7 @@ public:
     Robot bbtan;
     vector<vector<Celltype>> cells;
     vector<vector<double>> cellScale;
+    int MSToMove;
 public:
     World(Graphics& g);
     void draw(Graphics& g, int keyPress);

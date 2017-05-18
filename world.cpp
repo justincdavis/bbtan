@@ -24,14 +24,30 @@ World::World(Graphics& g)
     cells = starter;
     bbtan = Robot();
     balls = vector<Ball>{3,Ball(g)};
+    MSToMove = 100;
 }
 
 void World::update(Graphics&g, int keyPress){
 
-    for (int b = 0; b<balls.size(); ++b)
+    MSToMove -= g.elapsedMS();
+
+    g.out << MSToMove << endl;
+
+    if (MSToMove <= 0)
     {
-        balls[b].update(g, bbtan.x, bbtan.y);
+
+        for (int b = 0; b<balls.size(); ++b)
+        {
+
+            balls[b].update(g, bbtan.x, bbtan.y);
+            MSToMove -= 20;
+
+        }
+
     }
+
+
+
 }
 
 void World::draw(Graphics& g, int keyPress){

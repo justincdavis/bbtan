@@ -5,7 +5,7 @@ using namespace mssm;
 Ball::Ball(Graphics& g)
 {
     x = (g.width())/2;
-    y = (g.height()) - 70;
+    y = (g.height()) - 50;
     height = 50;
     width = 50;
     c= WHITE;
@@ -24,7 +24,7 @@ void Ball::update(Graphics& g, int rx, int ry)
     y = y+yv;
 
 
-    if (y>g.height()-50)
+    if (y>g.height()-60)
     {
         yv=(yv)*-0;
         xv=(xv)*-0;
