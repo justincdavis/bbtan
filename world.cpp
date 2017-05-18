@@ -29,24 +29,10 @@ World::World(Graphics& g)
 
 void World::update(Graphics&g, int keyPress){
 
-    MSToMove -= g.elapsedMS();
-
-    g.out << MSToMove << endl;
-
-    if (MSToMove <= 0)
-    {
-
         for (int b = 0; b<balls.size(); ++b)
         {
-
             balls[b].update(g, bbtan.x, bbtan.y);
-            MSToMove -= 20;
-
         }
-
-    }
-
-
 
 }
 
